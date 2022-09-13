@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="edit_message">Enter a Name</string>
+    <string name="button_send">Send</string>
+    <string name="view_name">Name</string>
+    <string name="view_phone">Phone Number</string>
+    <string name="view_email">Email</string>
+</resources>
