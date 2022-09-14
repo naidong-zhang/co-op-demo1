@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 
-const val EXTRA_MESSAGE = "com.example.myapplication.MESSAGE"
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,11 +15,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessage(view: View) {
-        val editText = findViewById<EditText>(R.id.editTextPersonName)
-        val message = editText.text.toString()
-        val intent = Intent(this, DisplayMessageActivity::class.java).apply {
-            putExtra(EXTRA_MESSAGE, message)
-        }
+        val name = findViewById<EditText>(R.id.editTextPersonName).text.toString()
+        val phone = findViewById<EditText>(R.id.editTextPhone).text.toString()
+        val email = findViewById<EditText>(R.id.editTextEmail).text.toString()
+        val user = User(name, phone, email)
+
+        val intent = Intent(this, DisplayMessageActivity::class.java)
+        intent.putExtra(DisplayMessageActivity.USER_DATA, user)
+
         startActivity(intent)
     }
 }
