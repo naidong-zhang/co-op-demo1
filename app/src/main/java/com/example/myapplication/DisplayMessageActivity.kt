@@ -14,8 +14,8 @@ class DisplayMessageActivity : AppCompatActivity() {
 
 //        val message = intent.getStringExtra(EXTRA_MESSAGE)
         val parcelable = intent.getParcelableExtra<Parcelable>(EXTRA_MESSAGE)
-        val user = Parcels.unwrap<User>(parcelable)
-        val message = user.name
+        val user = Parcels.unwrap<JUser>(parcelable)
+        val message = "${user.name} ${user.age}"
 
         val textView = findViewById<TextView>(R.id.textView)
         textView.text = message

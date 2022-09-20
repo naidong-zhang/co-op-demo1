@@ -3,9 +3,10 @@ package com.example.myapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import android.view.View
 import android.widget.EditText
-import org.parceler.Parcel
 import org.parceler.Parcels
 
 const val EXTRA_MESSAGE = "com.example.myapplication.MESSAGE"
@@ -19,7 +20,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessage(view: View) {
-        val user = User("John dow", 26)
+
+
+
+//        val user = User("abc", 24)
+        val user = JUser("abc",24)
+
+
         val parcelable = Parcels.wrap(user)
 
 //        val editText = findViewById<EditText>(R.id.editTextPersonName)
@@ -30,5 +37,6 @@ class MainActivity : AppCompatActivity() {
 
 
         startActivity(intent)
+
     }
 }
